@@ -419,7 +419,7 @@ if prompt := st.chat_input("Curious minds wanted!"):
 
 # %%
 #Local:
-%run RAG_Chatbot_combined.py
+#%run RAG_Chatbot_combined.py
 
 # %% [markdown]
 # Now, let's see what we've made.
