@@ -33,8 +33,12 @@
 # %%
 # In VSCode:
 # Define the HF_TOKEN to be passed into the password in a .py file called HF_TOKEN.
-from HF_TOKEN import HF_TOKEN
+#from HF_TOKEN import HF_TOKEN
 #HF_TOKEN = st.secrets["HF_TOKEN"]
+
+import os
+# Access the secret as an environment variable
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 # %% [markdown]
 # ---
