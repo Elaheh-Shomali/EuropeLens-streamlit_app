@@ -69,7 +69,7 @@ file_path2 = (
 # ### 3.2.&nbsp; Load the data
 
 # %%
-#%pip install -qU pypdf
+%pip install -qU pypdf
 
 # %%
 #Load the data
