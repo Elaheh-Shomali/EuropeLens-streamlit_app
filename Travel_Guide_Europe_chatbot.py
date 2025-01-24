@@ -88,10 +88,10 @@ async def load_pages_from_pdfs(file_paths):
         async for page in loader.alazy_load():
             combined_pages.append(page)
 
-# Call the function with the list of file paths
-await load_pages_from_pdfs(file_paths)
-
-# Now `combined_pages` contains Document objects from both PDFs
+# Streamlit button to trigger loading
+if st.button("Load PDFs"):
+    asyncio.run(load_pages_from_pdfs(file_paths))  # Use asyncio.run to execute
+    st.write("Loaded pages:", combined_pages)
 
 # %%
 print(f"{combined_pages[1].metadata}\n")
