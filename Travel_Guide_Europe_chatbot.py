@@ -8,10 +8,10 @@
 # LangChain is a framework that simplifies the development of applications powered by large language models (LLMs). Here we install their HuggingFace package as we'll be using open source models from HuggingFace.
 
 # %%
-pip install -qqq -U langchain-huggingface
-pip install -qqq -U langchain
-pip install -qqq -U langchain-community
-pip install -qqq -U faiss-cpu
+%pip install -qqq -U langchain-huggingface
+%pip install -qqq -U langchain
+%pip install -qqq -U langchain-community
+%pip install -qqq -U faiss-cpu
 
 # %% [markdown]
 # To use the LLMs, you'll need to create a HuggingFace access token for this project.
@@ -33,7 +33,7 @@ pip install -qqq -U faiss-cpu
 # %%
 # In VSCode:
 # Define the HF_TOKEN to be passed into the password in a .py file called HF_TOKEN.
-from My_HF_TOKEN import HF_TOKEN
+from Secrets import HF_TOKEN
 
 # %% [markdown]
 # ---
