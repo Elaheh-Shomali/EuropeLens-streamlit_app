@@ -8,10 +8,10 @@
 # LangChain is a framework that simplifies the development of applications powered by large language models (LLMs). Here we install their HuggingFace package as we'll be using open source models from HuggingFace.
 
 # %%
-%pip install -qqq -U langchain-huggingface
-%pip install -qqq -U langchain
-%pip install -qqq -U langchain-community
-%pip install -qqq -U faiss-cpu
+!pip install -qqq -U langchain-huggingface
+!pip install -qqq -U langchain
+!pip install -qqq -U langchain-community
+!pip install -qqq -U faiss-cpu
 
 # %% [markdown]
 # To use the LLMs, you'll need to create a HuggingFace access token for this project.
@@ -69,7 +69,7 @@ file_path2 = (
 # ### 3.2.&nbsp; Load the data
 
 # %%
-%pip install -qU pypdf
+!pip install -qU pypdf
 
 # %%
 #Load the data
