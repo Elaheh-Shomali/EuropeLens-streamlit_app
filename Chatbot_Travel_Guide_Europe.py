@@ -78,7 +78,7 @@ if "messages" not in st.session_state:
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+        st.markdown(message["contents"])
 
 # React to user input
 if prompt := st.chat_input("Curious minds wanted!"):
@@ -87,7 +87,7 @@ if prompt := st.chat_input("Curious minds wanted!"):
     st.chat_message("human").markdown(prompt)
 
     # Add user message to chat history
-    st.session_state.messages.append({"role": "human", "content": prompt})
+    st.session_state.messages.append({"role": "human", "contents": prompt})
 
     # Begin spinner before answering question so it's there for the duration
     with st.spinner("Diving deep to uncover the truth..."):
@@ -103,6 +103,6 @@ if prompt := st.chat_input("Curious minds wanted!"):
             st.markdown(response)
 
         # Add assistant response to chat history
-        st.session_state.messages.append({"role": "assistant", "content":  response})
+        st.session_state.messages.append({"role": "assistant", "contents":  response})
 
 
