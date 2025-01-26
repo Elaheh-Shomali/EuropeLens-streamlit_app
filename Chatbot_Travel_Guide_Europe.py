@@ -1,11 +1,8 @@
-# %%
-# Define the HF_TOKEN to be passed into the password in a .py file called HF_TOKEN.
 #from My_HF_TOKEN import HF_TOKEN
 import os
 # Access the secret as an environment variable
 HF_TOKEN = os.getenv("HF_TOKEN")
 
-# %%
 from langchain_huggingface import HuggingFaceEndpoint, HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -13,16 +10,6 @@ from langchain.chains import create_history_aware_retriever
 from langchain.chains.retrieval import create_retrieval_chain
 from langchain.chains.combine_documents.stuff import create_stuff_documents_chain
 
-
-# %%
-#From google Colab:  %%writefile rag_app.py
-
-from langchain_huggingface import HuggingFaceEndpoint, HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain.chains import create_history_aware_retriever
-from langchain.chains.retrieval import create_retrieval_chain
-from langchain.chains.combine_documents.stuff import create_stuff_documents_chain
 import streamlit as st
 
 # llm
@@ -31,14 +18,14 @@ llm = HuggingFaceEndpoint(repo_id=hf_model, huggingfacehub_api_token=HF_TOKEN)
 
 # embeddings
 embedding_model = "sentence-transformers/all-MiniLM-l6-v2"
-embeddings_folder = "/content/"
+embeddings_folder = "/contents/"
 
 embeddings = HuggingFaceEmbeddings(model_name=embedding_model,
                                    cache_folder=embeddings_folder)
 
 # load Vector Database
 # allow_dangerous_deserialization is needed. Pickle files can be modified to deliver a malicious payload that results in execution of arbitrary code on your machine
-vector_db_combined = FAISS.load_local("/content/faiss_index_combined", embeddings, allow_dangerous_deserialization=True)
+vector_db_combined = FAISS.load_local("contents/faiss_index_europeLens", embeddings, allow_dangerous_deserialization=True)
 
 # retriever
 retriever = vector_db_combined.as_retriever(search_kwargs={"k": 2})
