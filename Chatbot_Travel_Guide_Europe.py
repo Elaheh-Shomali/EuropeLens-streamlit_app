@@ -1,6 +1,8 @@
 # %%
 # Define the HF_TOKEN to be passed into the password in a .py file called HF_TOKEN.
 #from My_HF_TOKEN import HF_TOKEN
+import os
+# Access the secret as an environment variable
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 # %%
