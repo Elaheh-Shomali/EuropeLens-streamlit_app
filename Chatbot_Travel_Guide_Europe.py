@@ -1,6 +1,7 @@
 # %%
 # Define the HF_TOKEN to be passed into the password in a .py file called HF_TOKEN.
-from My_HF_TOKEN import HF_TOKEN
+#from My_HF_TOKEN import HF_TOKEN
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 # %%
 from langchain_huggingface import HuggingFaceEndpoint, HuggingFaceEmbeddings
