@@ -1,3 +1,7 @@
+#import gdown
+#url = "https://drive.google.com/drive/folders/1Bm1wHsPKpzZ_JqNPtMUhw8YhUrzVg1Gr?usp=sharing"
+#gdown.download_folder(url, quiet=False)
+
 #from My_HF_TOKEN import HF_TOKEN
 import os
 # Access the secret as an environment variable
@@ -18,7 +22,7 @@ llm = HuggingFaceEndpoint(repo_id=hf_model, huggingfacehub_api_token=HF_TOKEN)
 
 # embeddings
 embedding_model = "sentence-transformers/all-MiniLM-l6-v2"
-embeddings_folder = "/contents/"
+embeddings_folder = "contents/"
 
 embeddings = HuggingFaceEmbeddings(model_name=embedding_model,
                                    cache_folder=embeddings_folder)
