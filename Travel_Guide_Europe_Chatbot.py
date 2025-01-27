@@ -68,6 +68,45 @@ Ask me anything about Europe, and I’ll bring you the answers—culture, histor
 
 """)
 
+# Map
+map_data = [
+    {"name": "Paris", "lat": 48.856613, "lon": 2.352222},
+    {"name": "London", "lat": 51.507351, "lon": -0.127758},
+    {"name": "Rome", "lat": 41.902783, "lon": 12.496366},
+    {"name": "Barcelona", "lat": 41.385064, "lon": 2.173404},
+    {"name": "Amsterdam", "lat": 52.367573, "lon": 4.904139},
+    {"name": "Berlin", "lat": 52.520008, "lon": 13.404954},
+    {"name": "Prague", "lat": 50.075539, "lon": 14.437800},
+    {"name": "Vienna", "lat": 48.210033, "lon": 16.363449},
+    {"name": "Madrid", "lat": 40.416775, "lon": -3.703790},
+    {"name": "Lisbon", "lat": 38.716667, "lon": -9.139089},
+    {"name": "Venice", "lat": 45.440847, "lon": 12.315515},
+    {"name": "Florence", "lat": 43.769562, "lon": 11.255814},
+    {"name": "Istanbul", "lat": 41.008240, "lon": 28.978359},
+    {"name": "Stockholm", "lat": 59.329323, "lon": 18.068581},
+    {"name": "Copenhagen", "lat": 55.676098, "lon": 12.568337},
+    {"name": "Edinburgh", "lat": 55.953251, "lon": -3.188267},
+    {"name": "Dublin", "lat": 53.349805, "lon": -6.260310},
+    {"name": "Brussels", "lat": 50.850346, "lon": 4.351721},
+    {"name": "Budapest", "lat": 47.497913, "lon": 19.040236},
+    {"name": "Zurich", "lat": 47.376887, "lon": 8.541694},
+    {"name": "Munich", "lat": 48.135125, "lon": 11.581981},
+    {"name": "Athens", "lat": 37.983810, "lon": 23.727539},
+    {"name": "Milan", "lat": 45.464203, "lon": 9.189982},
+    {"name": "Nice", "lat": 43.710173, "lon": 7.261953},
+    {"name": "Seville", "lat": 37.388630, "lon": -5.982320},
+    {"name": "Porto", "lat": 41.157944, "lon": -8.629105},
+    {"name": "Helsinki", "lat": 60.169856, "lon": 24.938379},
+    {"name": "Warsaw", "lat": 52.229676, "lon": 21.012229},
+    {"name": "Oslo", "lat": 59.913868, "lon": 10.752245},
+    {"name": "Reykjavik", "lat": 64.135484, "lon": -21.895411},
+    {"name": "Krakow", "lat": 50.064651, "lon": 19.944981},
+    {"name": "Dubrovnik", "lat": 42.650660, "lon": 18.094420},
+    {"name": "Saint Petersburg", "lat": 59.934280, "lon": 30.335099},
+]
+
+st.map(map_data)
+
 # Initialise chat history
 # Chat history saves the previous messages to be displayed
 if "messages" not in st.session_state:
