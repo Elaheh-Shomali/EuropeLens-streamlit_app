@@ -74,33 +74,45 @@ st.image(
     use_container_width=True
 )
 
-# City Information with Expanders
-
+# CSS to change the background color: #c1f0c1 #f5f5f5 #e0e0e0 #d6d6d6
 # Apply custom CSS for colored expanders
 
-st.markdown(
-    """
+st.markdown("""
     <style>
-    /* Style the header of the expander */
-    .css-1l6r3i9 .streamlit-expanderHeader {
+    /* Set the background color for the entire app */
+    body {
+        background-color: #E0D0FF;  /* Replace with your desired color */
+        color: #333333;  /* Set default text color */
+    }
+
+    /* Customize the Streamlit header */
+    .css-18e3th9 {
+        font-size: 36px;
+        color: #2a2a2a;  /* Set a dark color for the header text */
+    }
+
+    /* Customize buttons */
+    .stButton button {
+        background-color: #ffa500;  /* Set button background color */
+        color: white;  /* Set button text color */
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    /* Customize the expander header */
+    .streamlit-expanderHeader {
         background-color: #ffa500;
         color: white;
         padding: 8px;
         border-radius: 5px;
         margin-bottom: 5px;
     }
-    
-    /* Style the expander container */
-    .css-1l6r3i9 .streamlit-expander {
-        background-color: #ffa500;  /* Light Orange Background */
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
+
     </style>
-    """,
-    unsafe_allow_html=True
-)
+    """, unsafe_allow_html=True)
+
+# City Information with Expanders
 
 col1, col2, col3 = st.columns(3)
 
@@ -179,17 +191,6 @@ map_data = [
 ]
 
 st.map(map_data)
-
-# CSS to change the background color: #c1f0c1 #f5f5f5 #e0e0e0 #d6d6d6
-
-st.markdown("""
-    <style>
-    /* Set the background color for the entire app */
-    body {
-        background-color: #E0D0FF;  /* Replace with your desired color */
-    }
-    </style>
-    """, unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
