@@ -64,9 +64,143 @@ st.title("EuropeLens")
 st.markdown("""
 Welcome to EuropeLens! 🌟
 
-Ask me anything about Europe, and I’ll bring you the answers—culture, history, travel tips, and more!
+Ask me anything about Europe, and I'll bring you the answers—culture, attractions, travel tips, and more!
 
 """)
+
+# Adding an image to the main page
+st.image(
+    "Photo/europa.png",
+    use_container_width=True
+)
+
+# City Information with Expanders
+
+# Apply custom CSS for colored expanders
+
+st.markdown(
+    """
+    <style>
+    /* Style the header of the expander */
+    .css-1l6r3i9 .streamlit-expanderHeader {
+        background-color: #ffa500;
+        color: white;
+        padding: 8px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    
+    /* Style the expander container */
+    .css-1l6r3i9 .streamlit-expander {
+        background-color: #ffa500;  /* Light Orange Background */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    with st.expander("Madrid"):
+        st.write("""
+        - **Population**: ~3.3 million
+        - **Highlights**: Prado Museum, Royal Palace, and Retiro Park
+        - **Known For**: Being Spain's capital, its rich art scene, and lively nightlife.
+        """)
+
+with col2:
+    with st.expander("Rome"):
+        st.write("""
+        - **Population**: ~2.8 million
+        - **Highlights**: Colosseum, Vatican City, Pantheon, and Roman Forum
+        - **Known For**: Ancient history, Vatican City, and iconic landmarks like the Colosseum and St. Peter's Basilica.
+        """)
+
+with col3:
+    with st.expander("Paris"):
+        st.write("""
+        - **Population**: ~2.1 million
+        - **Highlights**: Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and Montmartre
+        - **Known For**: The city of romance, world-class art, haute couture fashion, and culinary delights.
+        """)
+
+# Second row of columns
+col4, col5, col6 = st.columns(3)
+
+with col4:
+    with st.expander("London"):
+        st.write("""
+        - **Population**: ~8.9 million
+        - **Highlights**: Buckingham Palace, Tower of London, British Museum, and the London Eye
+        - **Known For**: Its history, iconic landmarks like Big Ben, and being a global hub for culture and finance.
+        """)
+
+with col5:
+    with st.expander("Berlin"):
+        st.write("""
+        - **Population**: ~3.7 million
+        - **Highlights**: Brandenburg Gate, Berlin Wall, Museum Island, and Alexanderplatz
+        - **Known For**: A history shaped by division, vibrant art scene, and an iconic nightlife culture.
+        """)
+
+with col6:
+    with st.expander("Lisbon"):
+        st.write("""
+        - **Population**: ~0.5 million
+        - **Highlights**: Belém Tower, Jerónimos Monastery, Alfama district, and São Jorge Castle
+        - **Known For**: Stunning views, historic trams, and vibrant Fado music.
+        """)
+      
+# Map
+map_data = [
+    {"name": "Paris", "lat": 48.856613, "lon": 2.352222},
+    {"name": "London", "lat": 51.507351, "lon": -0.127758},
+    {"name": "Rome", "lat": 41.902783, "lon": 12.496366},
+    {"name": "Amsterdam", "lat": 52.367573, "lon": 4.904139},
+    {"name": "Berlin", "lat": 52.520008, "lon": 13.404954},
+    {"name": "Prague", "lat": 50.075539, "lon": 14.437800},
+    {"name": "Vienna", "lat": 48.210033, "lon": 16.363449},
+    {"name": "Madrid", "lat": 40.416775, "lon": -3.703790},
+    {"name": "Lisbon", "lat": 38.716667, "lon": -9.139089},
+    {"name": "Stockholm", "lat": 59.329323, "lon": 18.068581},
+    {"name": "Copenhagen", "lat": 55.676098, "lon": 12.568337},
+    {"name": "Dublin", "lat": 53.349805, "lon": -6.260310},
+    {"name": "Brussels", "lat": 50.850346, "lon": 4.351721},
+    {"name": "Budapest", "lat": 47.497913, "lon": 19.040236},
+    {"name": "Istanbul", "lat": 41.008240, "lon": 28.978359},
+    {"name": "Athens", "lat": 37.983810, "lon": 23.727539},
+    {"name": "Helsinki", "lat": 60.169856, "lon": 24.938379},
+    {"name": "Warsaw", "lat": 52.229676, "lon": 21.012229},
+    {"name": "Oslo", "lat": 59.913868, "lon": 10.752245},
+]
+
+st.map(map_data)
+
+# CSS to change the background color: #c1f0c1 #f5f5f5 #e0e0e0 #d6d6d6
+
+st.markdown("""
+    <style>
+    /* Set the background color for the entire app */
+    body {
+        background-color: #E0D0FF;  /* Replace with your desired color */
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("End Conversation"):
+        st.session_state.messages.clear()
+        st.write("Ending the conversation. Goodbye!")
+
+with col2:
+    if st.button("Restart Conversation"):
+        st.experimental_rerun()
 
 # Initialise chat history
 # Chat history saves the previous messages to be displayed
