@@ -192,15 +192,22 @@ map_data = [
 
 st.map(map_data)
 
+# Initialize 'restart' flag if it doesn't exist
+if 'restart' not in st.session_state:
+    st.session_state.restart = False
+
 col1, col2 = st.columns(2)
 
+# Button to end the conversation
 with col1:
     if st.button("End Conversation"):
         st.session_state.messages.clear()
         st.write("Ending the conversation. Goodbye!")
 
+# Button to restart the conversation
 with col2:
     if st.button("Restart Conversation"):
+        st.session_state.restart = True
         st.experimental_rerun()
 
 # Handle the restart logic
