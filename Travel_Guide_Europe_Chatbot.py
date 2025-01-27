@@ -69,10 +69,10 @@ Ask me anything about Europe, and I’ll bring you the answers—culture, histor
 """)
 
 # Adding an image to the main page
-#st.image(
-#    "Photo\europa.png",
-#    use_column_width=True
-#)
+st.image(
+    "Photo/europa.png",
+    use_column_width=True
+)
 
 # City Information with Expanders
 
