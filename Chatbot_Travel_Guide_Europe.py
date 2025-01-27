@@ -1,8 +1,3 @@
-#import gdown
-#url = "https://drive.google.com/drive/folders/1Bm1wHsPKpzZ_JqNPtMUhw8YhUrzVg1Gr?usp=sharing"
-#gdown.download_folder(url, quiet=False)
-
-#from My_HF_TOKEN import HF_TOKEN
 import os
 # Access the secret as an environment variable
 HF_TOKEN = os.getenv("HF_TOKEN")
