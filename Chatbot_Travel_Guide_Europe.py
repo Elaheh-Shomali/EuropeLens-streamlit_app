@@ -192,9 +192,11 @@ map_data = [
 
 st.map(map_data)
 
-# Initialize 'restart' flag if it doesn't exist
+# Initialize session state variables if they don't exist
 if 'restart' not in st.session_state:
     st.session_state.restart = False
+if 'messages' not in st.session_state:
+    st.session_state.messages = []
 
 col1, col2 = st.columns(2)
 
@@ -207,14 +209,13 @@ with col1:
 # Button to restart the conversation
 with col2:
     if st.button("Restart Conversation"):
+        # Set the flag to restart the conversation
         st.session_state.restart = True
-        st.experimental_rerun()
 
-# Handle the restart logic
+# If restart flag is True, reset the messages and update state
 if st.session_state.restart:
-    # Optionally clear session state messages or reset other parts
-    st.session_state.messages = []
-    st.session_state.restart = False
+    st.session_state.messages = []  # Clear conversation history
+    st.session_state.restart = False  # Reset restart flag to prevent continuous reruns
     st.write("Conversation restarted. How can I help you today?")
 
 # Initialise chat history
