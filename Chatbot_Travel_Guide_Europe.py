@@ -203,6 +203,13 @@ with col2:
     if st.button("Restart Conversation"):
         st.experimental_rerun()
 
+# Handle the restart logic
+if st.session_state.restart:
+    # Optionally clear session state messages or reset other parts
+    st.session_state.messages = []
+    st.session_state.restart = False
+    st.write("Conversation restarted. How can I help you today?")
+
 # Initialise chat history
 # Chat history saves the previous messages to be displayed
 if "messages" not in st.session_state:
