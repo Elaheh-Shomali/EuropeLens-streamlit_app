@@ -60,6 +60,14 @@ rag_bot = init_bot()
 
 st.title("EuropeLens")
 
+# Markdown
+st.markdown("""
+Welcome to EuropeLens! 🌟
+
+Ask me anything about Europe, and I’ll bring you the answers—culture, history, travel tips, and more!
+
+""")
+
 # Initialise chat history
 # Chat history saves the previous messages to be displayed
 if "messages" not in st.session_state:
