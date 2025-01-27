@@ -4,13 +4,8 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever
 from langchain.chains.retrieval import create_retrieval_chain
 from langchain.chains.combine_documents.stuff import create_stuff_documents_chain
-
-#from API_key import Api_token
 import streamlit as st
-import os
-# Retrieve the API key from environment variables
-#Api_token = os.getenv("HF_TOKEN")
-#os.environ["HUGGINGFACEHUB_API_TOKEN"] = Api_token
+
 import os
 # Access the secret as an environment variable
 HF_TOKEN = os.getenv("HF_TOKEN")
@@ -63,7 +58,7 @@ rag_bot = init_bot()
 
 ##### streamlit #####
 
-st.title("A Pioneer of Food Remedies")
+st.title("EuropeLens")
 
 # Initialise chat history
 # Chat history saves the previous messages to be displayed
@@ -85,7 +80,7 @@ if prompt := st.chat_input("Curious minds wanted!"):
     st.session_state.messages.append({"role": "human", "content": prompt})
 
     # Begin spinner before answering question so it's there for the duration
-    with st.spinner("Going down the rabbithole for answers..."):
+    with st.spinner("Diving deep to uncover the truth..."):
 
         # send question to chain to get answer
         answer = rag_bot.invoke({"input": prompt, "chat_history": st.session_state.messages, "context": retriever})
