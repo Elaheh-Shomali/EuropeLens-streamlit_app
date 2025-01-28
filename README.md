@@ -35,7 +35,7 @@ This repository is organized to ensure a clear and logical structure, facilitati
 
 - **content/faiss_index_combined**: Folder containing vector databases for retrieval.
 
-- **Notebook/learning_code.ipynb**: Jupyter Notebook for learning and experimentation.
+- **Chatbot_Travel_Guide_Europe.ipynb**: Jupyter Notebook for learning and experimentation.
 
 ---
 
