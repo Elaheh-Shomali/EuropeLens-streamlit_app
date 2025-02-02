@@ -11,7 +11,7 @@ import os
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 # llm
-hf_model = "mistralai/Mistral-7B-Instruct-v0.3"
+hf_model = "databricks/dolly-v2-7b"
 llm = HuggingFaceEndpoint(repo_id=hf_model, huggingfacehub_api_token = HF_TOKEN)
 
 # embeddings
