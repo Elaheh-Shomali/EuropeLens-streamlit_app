@@ -11,11 +11,11 @@ import os
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 # llm
-hf_model = "databricks/dolly-v2-7b"
+hf_model = "mistralai/Mistral-7B-Instruct-v0.1"
 llm = HuggingFaceEndpoint(repo_id=hf_model, huggingfacehub_api_token = HF_TOKEN)
 
 # embeddings
-embedding_model = "intfloat/e5-base-v2"
+embedding_model = "sentence-transformers/all-MiniLM-l6-v2"
 embeddings_folder = "content/"
 
 embeddings = HuggingFaceEmbeddings(model_name=embedding_model,
