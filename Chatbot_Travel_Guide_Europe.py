@@ -1,5 +1,6 @@
 from langchain_huggingface import HuggingFaceEndpoint, HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+#from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever
 from langchain.chains.retrieval import create_retrieval_chain
@@ -11,8 +12,11 @@ import os
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 # llm
-hf_model = "mistralai/Mistral-7B-Instruct-v0.1"
-llm = HuggingFaceEndpoint(repo_id=hf_model, huggingfacehub_api_token = HF_TOKEN)
+hf_model = "meta-llama/Llama-2-7b-chat-hf"
+llm = HuggingFaceEndpoint(repo_id=hf_model, 
+                          huggingfacehub_api_token = HF_TOKEN, 
+                          task="chat"  # explicitly specify the task
+                         )
 
 # embeddings
 embedding_model = "sentence-transformers/all-MiniLM-l6-v2"
