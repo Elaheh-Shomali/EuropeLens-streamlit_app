@@ -12,7 +12,7 @@ import os
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 # llm
-hf_model = "meta-llama/Llama-2-7b-chat-hf"
+hf_model = "meta-llama/Llama-2-Chat"
 llm = HuggingFaceEndpoint(repo_id=hf_model, 
                           huggingfacehub_api_token = HF_TOKEN, 
                           task="chat"  # explicitly specify the task
