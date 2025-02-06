@@ -14,8 +14,9 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 # llm
 hf_model = "Qwen/Qwen2.5-7B-Instruct-1M"
 llm = HuggingFaceEndpoint(repo_id=hf_model, 
-                          huggingfacehub_api_token = HF_TOKEN #, 
-                          #task="chat"  # explicitly specify the task
+                          huggingfacehub_api_token = HF_TOKEN , 
+                          task="text-generation",  # Ensure the task is correct
+                          model_kwargs={"temperature": 0.7, "max_length": 512},
                          )
 
 # embeddings
