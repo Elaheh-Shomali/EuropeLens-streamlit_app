@@ -5,5 +5,3 @@ langchain-community
 faiss-cpu
 pypdf
 gdown
-torch
-langchain.llms
