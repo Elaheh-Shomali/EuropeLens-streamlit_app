@@ -9,6 +9,11 @@ This project explores generative AI, focusing particularly on Large Language Mod
 
 ---
 
+## App Link
+Try out the interactive **EuropeLens** app [here](https://europelens-chatbot.streamlit.app/).
+
+---
+
 ## **Tools and Techniques**  
 - **Programming Language:** Python  
 - **Frameworks:** Streamlit, Jupyter Notebooks  
